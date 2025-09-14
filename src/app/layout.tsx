@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Public_Sans } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/common/Navbar";
+import SocialBar from "@/components/common/SocialBar";
+import OfferHeading from '@/components/common/OfferHeading'
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+export const publicSans = Public_Sans({
   subsets: ["latin"],
-});
+  variable: '--font-public-sans' 
+})
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+export const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter'
+})
 
 export const metadata: Metadata = {
   title: "Gadget Bazaar - Home",
@@ -25,8 +28,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${publicSans.className}  antialiased`}
       >
+        <OfferHeading/>
+        <SocialBar/>
+        <Navbar/>
         {children}
       </body>
     </html>
