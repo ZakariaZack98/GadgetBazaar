@@ -12,7 +12,7 @@ const SocialBar = () => {
           <span className='leading-5 text-sm me-2'>Follow us</span>
           {
             socialHandles?.map(handle => (
-              <Link href={handle.url} target='_blank'>
+              <Link key={handle.platform} href={handle.url} target='_blank'>
                 <span className='hover:opacity-75' title={handle.platform}><handle.icon/></span>
               </Link>
             ))
