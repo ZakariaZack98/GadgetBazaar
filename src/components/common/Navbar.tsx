@@ -45,4 +45,4 @@ const Navbar = () => {
   )
 }
 
-export default React.memo(Navbar) || Navbar
+export default Navbar

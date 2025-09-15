@@ -25,8 +25,6 @@ interface SelectOption {
 
 interface SelectorPropsType {
   categories: SelectOption[];
-  placeholder: string;
-  onValueChange: (value: string) => void;
 }
 
 interface SubCategoryType {
@@ -38,7 +36,7 @@ interface SubCategoryType {
     isActive: boolean;
 }
 
-const CategorySelector = ({ categories, placeholder, onValueChange }: SelectorPropsType) => {
+const CategorySelector = ({ categories }: SelectorPropsType) => {
   const [categoryOpen, setCategoryOpen] = useState<boolean>(false);
   const [hoveredCategory, setHoveredCategory] = useState<any>(null);
 
