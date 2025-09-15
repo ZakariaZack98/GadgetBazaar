@@ -1,6 +1,6 @@
 import { Icons } from "./icons";
 
-export const menubarData = [
+export const menubarOptionsData = [
   {
     label: 'Track Order',
     path: '/track-order',
