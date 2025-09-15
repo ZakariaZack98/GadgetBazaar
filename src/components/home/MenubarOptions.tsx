@@ -15,7 +15,7 @@ const MenubarOptions = () => {
   return (
     <>
       {menubarData?.map((option) => (
-        <Link href={option.path} className="flex items-center gap-x-1.5">
+        <Link key={option.path} href={option.path} className="flex items-center gap-x-1.5">
           <span>
             <option.icon />
           </span>
