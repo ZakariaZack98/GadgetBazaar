@@ -38,10 +38,10 @@ interface SubCategoryType {
 
 const CategorySelector = ({ categories }: SelectorPropsType) => {
   const [categoryOpen, setCategoryOpen] = useState<boolean>(false);
-  const [hoveredCategory, setHoveredCategory] = useState<any>(null);
+  const [hoveredCategory, setHoveredCategory] = useState<SelectOption | null>(null);
 
   return (
-    <div className="relative h-full">
+    <div className="relative h-full z-50">
       {/* ============================ Toggle switch button ========================== */}
       <Button
         className={`${

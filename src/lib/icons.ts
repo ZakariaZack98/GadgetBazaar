@@ -2,8 +2,9 @@ import { CgProfile } from 'react-icons/cg'
 import { CiSearch } from 'react-icons/ci'
 import { FaHeadphonesAlt, FaMapMarkerAlt } from 'react-icons/fa'
 import { FaTwitter, FaFacebook, FaReddit, FaPinterest, FaYoutube, FaInstagram, FaCartShopping, FaRegHeart, FaPhoneVolume, FaAngleDown, FaAngleUp} from 'react-icons/fa6'
-import { IoMdHelpCircleOutline } from 'react-icons/io'
+import { IoMdHelpCircleOutline, IoMdTrophy } from 'react-icons/io'
 import { IoClose } from 'react-icons/io5'
+import { MdCreditCard, MdOutlineDeliveryDining } from 'react-icons/md'
 import { SlRefresh } from 'react-icons/sl'
 
 
@@ -25,5 +26,8 @@ export const Icons = {
   close: IoClose,
   search: CiSearch,
   downAngle: FaAngleDown,
-  upAngle: FaAngleUp
+  upAngle: FaAngleUp,
+  parcel: MdOutlineDeliveryDining,
+  trophy: IoMdTrophy,
+  payment: MdCreditCard
 }

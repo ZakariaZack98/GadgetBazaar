@@ -1,0 +1,127 @@
+.category-slider-container {
+  margin: 0 auto;
+}
+
+
+.card-swiper {
+  position: relative;
+
+}
+
+/* Navigation buttons */
+.swiper-button-prev,
+.swiper-button-next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ff7b00;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(255, 123, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: #e66f00;
+  transform: scale(1.05);
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.swiper-button-prev {
+  left: 0;
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: ''; /* Remove default Swiper arrows */
+}
+
+.custom-prev-arrow::before {
+  content: '←'; /* Unicode left arrow */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.custom-next-arrow::before {
+  content: '→'; /* Unicode right arrow */
+  font-size: 24px;
+  font-weight: bold;
+}
+
+
+/* Custom navigation buttons */
+.swiper-button-prev-custom,
+.swiper-button-next-custom {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ff7b00;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(255, 123, 0, 0.3);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+
+.swiper-button-prev-custom:hover,
+.swiper-button-next-custom:hover {
+  background-color: #e66f00;
+  transform: scale(1.05);
+}
+
+/* Remove default Swiper arrow content */
+.swiper-button-prev-custom::after,
+.swiper-button-next-custom::after {
+  content: none;
+}
+
+.swiper-slide{
+  background-color: white !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .category-slider-container {
+    padding: 10px 30px;
+  }
+  
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .category-item {
+    height: 120px;
+    padding: 15px 10px;
+  }
+  
+  .category-icon {
+    font-size: 28px;
+  }
+  
+  .category-name {
+    font-size: 13px;
+  }
+  .swiper-button-prev-custom,
+  .swiper-button-next-custom {
+    width: 35px;
+    height: 35px;
+  }
+}

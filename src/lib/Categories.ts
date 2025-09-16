@@ -4,7 +4,7 @@ export const categories = [
     name: "Computer & Laptop",
     slug: "computer-laptop",
     image: {
-      url: "https://example.com/images/computer-laptop.jpg",
+      url: "/images/category/computers-laptops.png",
       publicId: "computer-laptop-123"
     },
     subcategory: [
@@ -40,7 +40,7 @@ export const categories = [
     name: "SmartPhone",
     slug: "smartphone",
     image: {
-      url: "https://example.com/images/smartphone.jpg",
+      url: "/images/category/smartphones.png",
       publicId: "smartphone-123"
     },
     subcategory: [
@@ -76,7 +76,7 @@ export const categories = [
     name: "Computer Accessories",
     slug: "computer-accessories",
     image: {
-      url: "https://example.com/images/computer-accessories.jpg",
+      url: "/images/category/accessories.png",
       publicId: "computer-accessories-123"
     },
     subcategory: [
@@ -112,7 +112,7 @@ export const categories = [
     name: "Headphone",
     slug: "headphone",
     image: {
-      url: "https://example.com/images/headphone.jpg",
+      url: "/images/category/headphones.png",
       publicId: "headphone-123"
     },
     subcategory: [
@@ -148,7 +148,7 @@ export const categories = [
     name: "Mobile Accessories",
     slug: "mobile-accessories",
     image: {
-      url: "https://example.com/images/mobile-accessories.jpg",
+      url: "/images/category/smartphone-accessories.png",
       publicId: "mobile-accessories-123"
     },
     subcategory: [
@@ -184,7 +184,7 @@ export const categories = [
     name: "Gaming Console",
     slug: "gaming-console",
     image: {
-      url: "https://example.com/images/gaming-console.jpg",
+      url: "/images/category/console.png",
       publicId: "gaming-console-123"
     },
     subcategory: [
@@ -220,7 +220,7 @@ export const categories = [
     name: "Camera & Photo",
     slug: "camera-photo",
     image: {
-      url: "https://example.com/images/camera-photo.jpg",
+      url: "/images/category/camera-photo.png",
       publicId: "camera-photo-123"
     },
     subcategory: [
@@ -256,7 +256,7 @@ export const categories = [
     name: "TV & Homes Appliances",
     slug: "tv-home-appliances",
     image: {
-      url: "https://example.com/images/tv-home-appliances.jpg",
+      url: "/images/category/tv-home.png",
       publicId: "tv-home-appliances-123"
     },
     subcategory: [
@@ -292,7 +292,7 @@ export const categories = [
     name: "Watchs & Accessories",
     slug: "watches-accessories",
     image: {
-      url: "https://example.com/images/watches-accessories.jpg",
+      url: "/images/category/watch.webp",
       publicId: "watches-accessories-123"
     },
     subcategory: [
@@ -328,7 +328,7 @@ export const categories = [
     name: "GPS & Navigation",
     slug: "gps-navigation",
     image: {
-      url: "https://example.com/images/gps-navigation.jpg",
+      url: "/images/category/watch.webp",
       publicId: "gps-navigation-123"
     },
     subcategory: [
@@ -364,7 +364,7 @@ export const categories = [
     name: "Warable Technology",
     slug: "wearable-technology",
     image: {
-      url: "https://example.com/images/wearable-technology.jpg",
+      url: "/images/category/smartphones.png",
       publicId: "wearable-technology-123"
     },
     subcategory: [
