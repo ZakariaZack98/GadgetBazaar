@@ -1,9 +1,8 @@
 "use client";
 import { featuredProductsData } from "@/lib/featuredProduct";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ProductCard from "../common/ProductCard";
-import { sampleProduct } from "../../../temp/sampleProduct";
 import { useQuery } from "@tanstack/react-query";
 import { getFeaturedProducts } from "@/api/featuredProduct";
 import FeaturedProductLoadingSkeleton from "./skeletons/featuredProductsSkeleton";
@@ -15,36 +14,46 @@ interface featuredCategoryType {
 }
 
 const FeaturedProducts = () => {
-  const sampleProductData = sampleProduct;
-
+  const Allcategory = {
+    name: 'All',
+    slug: 'all'
+  }
   const featuredProductsAssets = featuredProductsData;
-  const [selectedCategory, setSelectedCategory] = useState<featuredCategoryType | null>(null);
+  const [selectedCategory, setSelectedCategory] = useState<featuredCategoryType>(Allcategory);
+  const [productsData, setProductsData] = useState<ProductType[]>([]);
 
   const { isPending, isError, data, error } = useQuery({
-    queryKey: ["featuredproducts"],
-    queryFn: getFeaturedProducts,
+    queryKey: ["featuredproducts", selectedCategory.slug],
+    queryFn: () => getFeaturedProducts(selectedCategory.slug),
   });
 
-  let products: ProductType[] | undefined;
-  products = data?.products.slice(0, 8);
+  useEffect(() => {
+    if (data) {
+      setProductsData(data.products);
+    }
+  }, [data]);
+
+  console.log(data);
 
   return (
     <div className="my-18 container mx-auto">
       <div className="flex gap-x-5 items-stretch h-fit">
         {/* ============================= vertical banner ============================= */}
-        <Link href={"/featured"} className="w-full relative flex justify-center object-cover object-center">
+        <Link
+          href={"/category/computers-laptops"}
+          className="w-full relative flex justify-center object-cover object-center">
           <img src={featuredProductsAssets.banner.imgUrl} alt="banner_image" className="" />
         </Link>
         {/* =========================== featured tab section ============================= */}
-        <div className="lg:min-w-3/4 flex flex-col justify-between ">
+        <div className="lg:min-w-3/4 flex flex-col justify-between gap-5">
           {/* ==================== Heading =====================*/}
           <div className="flex justify-between items-baseline">
             <h3 className="font-semibold text-2xl leading-8">Featured Products</h3>
             <div className="flex gap-x-2 items-baseline body-medium-400 text-lightBlack">
               <p
-                onClick={() => setSelectedCategory(null)}
+                onClick={() => setSelectedCategory(Allcategory)}
                 className={`py-2 cursor-pointer duration-200 ${
-                  selectedCategory
+                  selectedCategory.slug !== 'all'
                     ? "hover:text-accentOrange"
                     : "font-semibold text-deepBlack border-b-2 border-accentOrange"
                 }`}>
@@ -74,7 +83,7 @@ const FeaturedProducts = () => {
             <p>Something went wrong</p>
           ) : (
             <div className="grid lg:grid-cols-4 grid-cols-2 md:grid-cols-3 gap-4 h-full">
-              {products?.map((product) => (
+              {productsData.map((product) => (
                 <ProductCard key={product.id} product={product} />
               ))}
             </div>

@@ -34,7 +34,7 @@ const ProductCard = ({ product }: ProductcardPropsType) => {
   // }
 
   return (
-    <div className=" bg-white overflow-hidden border border-gray-300 transition-shadow duration-300 relative group"> 
+    <div className=" bg-white max-h-88 overflow-hidden border border-gray-300 transition-shadow duration-300 relative group"> 
       <div className="flex gap-1.5 absolute top-2 left-2 z-20"> 
         {product.discountPercentage && product.discountPercentage > 0 ? (
           <div className="px-2 py-1 bg-accentOrange text-white text-xs font-bold z-10">

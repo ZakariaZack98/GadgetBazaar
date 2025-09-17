@@ -13,12 +13,12 @@ export const featuredProductsData = {
       slug: 'laptops'
     },
     {
-      name: 'Headphones',
-      slug: 'headphones'
+      name: 'tablets',
+      slug: 'tablets'
     },
     {
-      name: 'TV',
-      slug: 'tv'
+      name: 'Watches',
+      slug: 'mens-watches'
     },
   ]
 };
