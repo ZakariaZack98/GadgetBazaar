@@ -6,7 +6,7 @@ import CardCarousel from '../common/CardCarousel';
 const ShopByCategory = () => {
   const categoryData = categories;
   const cardCarouselProps: React.ReactNode[] = categoryData?.map(category => (
-    <CategoryCard category={category}/>
+    <CategoryCard key={category._id} category={category}/>
   ))
 
   return (

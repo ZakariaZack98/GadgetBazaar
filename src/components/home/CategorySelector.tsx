@@ -3,42 +3,16 @@ import React, { useState } from "react";
 import { Button } from "../ui/button";
 import { Icons } from "@/lib/icons";
 import Link from "next/link";
-
-interface SelectOption {
-  _id: string;
-  name: string;
-  slug: string;
-  image: {
-    url: string;
-    publicId: string;
-  };
-  subcategory: {
-    name: string;
-    slug: string;
-    isActive: boolean;
-    category: {
-      slug: string;
-    };
-  }[];
-  isActive: boolean;
-}
+import { CategoryType } from "@/types/category";
+import { SubcategoryType } from "@/types/subcategory";
 
 interface SelectorPropsType {
-  categories: SelectOption[];
-}
-
-interface SubCategoryType {
-  category: {
-      slug: string;
-    };
-    name: string;
-    slug: string;
-    isActive: boolean;
+  categories: CategoryType[];
 }
 
 const CategorySelector = ({ categories }: SelectorPropsType) => {
   const [categoryOpen, setCategoryOpen] = useState<boolean>(false);
-  const [hoveredCategory, setHoveredCategory] = useState<SelectOption | null>(null);
+  const [hoveredCategory, setHoveredCategory] = useState<CategoryType | null>(null);
 
   return (
     <div className="relative h-full z-50">
@@ -70,7 +44,7 @@ const CategorySelector = ({ categories }: SelectorPropsType) => {
           {/* ====================== SubCategory Part =========================== */}
             {hoveredCategory && (
               <div className="flex flex-col gap-x-2 bg-white shadow-xl md:w-1/2 h-fit border border-bannerGray">
-                {hoveredCategory?.subcategory?.map((subcategory: SubCategoryType) => (
+                {hoveredCategory?.subcategory?.map((subcategory: SubcategoryType) => (
                   <Link
                     key={subcategory.slug}
                     href={`/category/${subcategory.category.slug}/${subcategory.slug}`}
