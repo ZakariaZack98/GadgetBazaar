@@ -4,6 +4,7 @@ import { heroAssets } from "@/lib/hero";
 import ShopByCategory from "@/components/home/ShopByCategory";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
 import BannerSection from "@/components/home/BannerSection";
+import HighlightProducts from "@/components/home/HighlightProducts";
 
 export default function Home() {
   const heroProps = heroAssets;
@@ -14,6 +15,7 @@ export default function Home() {
       <ShopByCategory/>
       <FeaturedProducts/>
       <BannerSection/>
+      <HighlightProducts/>
     </>
   );
 }
