@@ -11,7 +11,6 @@ interface menubarDataType {
 
 const MenubarOptions = () => {
   const menubarData: menubarDataType[] = menubarOptionsData;
-  console.log(menubarData)
   return (
     <>
       {menubarData?.map((option) => (

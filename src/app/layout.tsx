@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import SocialBar from "@/components/common/SocialBar";
 import OfferHeading from '@/components/common/OfferHeading'
+import QueryProvider from "@/components/common/QueryProvider";
 
 export const publicSans = Public_Sans({
   subsets: ["latin"],
@@ -33,7 +34,9 @@ export default function RootLayout({
         <OfferHeading/>
         <SocialBar/>
         <Navbar/>
-        {children}
+        <QueryProvider>
+          {children}
+        </QueryProvider>
       </body>
     </html>
   );
