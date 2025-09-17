@@ -33,8 +33,6 @@ const FeaturedProducts = () => {
     }
   }, [data]);
 
-  console.log(data);
-
   return (
     <div className="my-18 container mx-auto">
       <div className="flex gap-x-5 items-stretch h-fit">
