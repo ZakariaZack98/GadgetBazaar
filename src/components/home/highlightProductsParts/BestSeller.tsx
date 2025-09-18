@@ -2,15 +2,15 @@ import ProductCardMini from '@/components/common/ProductCardMini';
 import { ProductType } from '@/types/product';
 import React from 'react'
 
-const FlashSale = async () => {
+const BestSeller = async () => {
   //data fetching part with relevant queries
-  const productData = await (await fetch(`https://dummyjson.com/products/category/mens-watches?limit=3`)).json()
+  const productData = await (await fetch(`https://dummyjson.com/products/category/laptops?limit=3`)).json()
   let productsList: ProductType[] | null = productData?.products;
   
 
   return (
     <div className='flex flex-col gap-4'>
-      <h3 className='font-semibold text-deepblack leading-6'>FLASH SALE TODAY</h3>
+      <h3 className='font-semibold text-deepblack leading-6'>BESTSELLER PRODUCTS</h3>
       {
         productsList?.map(product => (
           <ProductCardMini key={product.id} product={product}/>
@@ -20,4 +20,4 @@ const FlashSale = async () => {
   )
 }
 
-export default FlashSale
+export default BestSeller

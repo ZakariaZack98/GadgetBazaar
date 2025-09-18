@@ -12,7 +12,7 @@ const ProductCardMini = ({product}: ProductCardMiniPropsType) => {
     <Link href={`/category/${category}/${id}`}>
       <div className='p-3 border-2 border-gray-300 flex gap-x-3 items-center duration-200 hover:shadow-lg'>
       {/* ========== thumbnail picture ============= */}
-      <picture className='w-20 h-20'>
+      <picture className='w-20 h-20 aspect-square'>
         <img src={images[0]} alt={`thumbnail_pocture_of_${title}`} className=' object-cover object-center'/>
       </picture>
       {/* =========== title and price ============== */}
