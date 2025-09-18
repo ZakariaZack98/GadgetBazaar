@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import { Input } from '../ui/input'
 import { Icons } from '@/lib/icons';
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import LoginPopup from './LoginPopup';
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -36,9 +38,16 @@ const Navbar = () => {
             <span className='absolute -top-1 -right-2 border border-accentBlue h-5 w-5 rounded-full text-xs bg-white text-accentBlue flex justify-center items-center'>2</span>
             <span><Icons.wishlist/></span>
           </div>
-          <div className="profile cursor-pointer">
-            <span><Icons.user/></span>
-          </div>
+          <Popover>
+            <PopoverTrigger asChild>
+              <div className="profile cursor-pointer">
+                <span><Icons.user/></span>
+              </div>
+            </PopoverTrigger>
+            <PopoverContent className='w-106' side='bottom' align='end'>
+                <LoginPopup/>
+            </PopoverContent>
+          </Popover>
         </div>
       </div>
     </div>
