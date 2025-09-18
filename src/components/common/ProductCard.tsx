@@ -48,7 +48,7 @@ const ProductCard = ({ product }: ProductcardPropsType) => {
         )}
       </div>
 
-      <div className="relative w-full min-h-1/2 flex justify-center items-center p-4">
+      <div className="relative w-full h-13/20 flex justify-center items-center p-4">
         <img src={product.images[0]} alt={product.title} className="max-w-full max-h-full object-contain" />
 
         {/* Overlay and Buttons */}
@@ -70,7 +70,7 @@ const ProductCard = ({ product }: ProductcardPropsType) => {
         </div>
       </div>
 
-      <div className="p-4">
+      <div className="p-4 flex flex-col justify-end">
         <div className="flex items-center space-x-1 mb-2" title={`total ${product.reviews.length} ratings`}>
           {/* Loop to render stars based on avgRating */}
           {[...Array(5)].map((_, i) => (

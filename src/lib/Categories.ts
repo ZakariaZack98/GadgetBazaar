@@ -67,7 +67,47 @@ export const categories = [
         category: {
           slug: "smartphone"
         }
-      }
+      },
+      {
+        name: "Techno",
+        slug: "techno",
+        isActive: true,
+        category: {
+          slug: "smartphone"
+        }
+      },
+      {
+        name: "Samsung",
+        slug: "samsung",
+        isActive: true,
+        category: {
+          slug: "smartphone"
+        }
+      },
+      {
+        name: "One Plus",
+        slug: "one-plus",
+        isActive: true,
+        category: {
+          slug: "smartphone"
+        }
+      },
+      {
+        name: "Oppo",
+        slug: "oppo",
+        isActive: true,
+        category: {
+          slug: "smartphone"
+        }
+      },
+      {
+        name: "Nokia",
+        slug: "nokia",
+        isActive: true,
+        category: {
+          slug: "smartphone"
+        }
+      },
     ],
     isActive: true
   },

@@ -93,7 +93,7 @@ const Footer = () => {
           <div className="flex gap-1 flex-wrap">
             {
             popularTagsData?.map(tag => (
-              <Link href={`/tags/${tag.slug}`} className="py-1 px-2 border border-gray-400 body-large-500 hover:bg-gray-800">{tag.tagName}</Link>
+              <Link key={tag.slug} href={`/tags/${tag.slug}`} className="py-1 px-2 border border-gray-400 body-large-500 hover:bg-gray-800">{tag.tagName}</Link>
             ))
           }
           </div>

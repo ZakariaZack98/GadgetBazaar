@@ -4,6 +4,7 @@ import { Input } from '../ui/input'
 import { Icons } from '@/lib/icons';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import LoginPopup from './LoginPopup';
+import CartPopup from './CartPopup';
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -30,14 +31,23 @@ const Navbar = () => {
         </div>
         {/* ======================== Cart, wishlist, profile ======================= */}
         <div className="col-span-3 flex items-center justify-end text-3xl gap-x-6 ">
-          <div className="cart relative cursor-pointer">
-            <span className='absolute -top-1 -right-2 border border-accentBlue h-5 w-5 rounded-full text-xs bg-white text-accentBlue flex justify-center items-center'>2</span>
-            <span><Icons.cart/></span>
-          </div>
+          {/* ============ cart popup ============= */}
+          <Popover>
+            <PopoverTrigger asChild>
+              <div className="cart relative cursor-pointer">
+                <span className='absolute -top-1 -right-2 border border-accentBlue h-5 w-5 rounded-full text-xs bg-white text-accentBlue flex justify-center items-center'>2</span>
+                <span><Icons.cart/></span>
+              </div>
+            </PopoverTrigger>
+            <PopoverContent className='w-104' side='bottom' align='end'>
+              <CartPopup/>
+            </PopoverContent>
+          </Popover>
           <div className="wishlist relative cursor-pointer">
             <span className='absolute -top-1 -right-2 border border-accentBlue h-5 w-5 rounded-full text-xs bg-white text-accentBlue flex justify-center items-center'>2</span>
             <span><Icons.wishlist/></span>
           </div>
+          {/* ============ user popup ============= */}
           <Popover>
             <PopoverTrigger asChild>
               <div className="profile cursor-pointer">
