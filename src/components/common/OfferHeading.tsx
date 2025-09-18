@@ -18,7 +18,7 @@ const OfferHeading = () => {
           <span className="display3 text-accentYellow">40%</span>
           <span className="body-xl-600">OFF</span>
         </div>
-        <Button className="bg-accentYellow text-black !text-sm leading-12 !px-6">SHOP NOW <FaArrowRight/> </Button>
+        <Button className="bg-accentYellow text-black !text-sm leading-12 !px-6 hover:text-white hover:bg-accentYellow">SHOP NOW <FaArrowRight/> </Button>
       </div>
       <div className="absolute right-2 xxl:right-10 top-1/2 -translate-y-1/2">
         <Button className="bg-shadowBlack h-7 w-7" onClick={() => setCloseHeading(true)}><IoClose/></Button>
