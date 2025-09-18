@@ -5,6 +5,7 @@ import Navbar from "@/components/common/Navbar";
 import SocialBar from "@/components/common/SocialBar";
 import OfferHeading from '@/components/common/OfferHeading'
 import QueryProvider from "@/components/common/QueryProvider";
+import Footer from "@/components/common/Footer";
 
 export const publicSans = Public_Sans({
   subsets: ["latin"],
@@ -37,6 +38,7 @@ export default function RootLayout({
         <QueryProvider>
           {children}
         </QueryProvider>
+        <Footer/>
       </body>
     </html>
   );
