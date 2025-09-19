@@ -5,6 +5,7 @@ import { Icons } from '@/lib/icons';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import LoginPopup from './LoginPopup';
 import CartPopup from './CartPopup';
+import WishlistPopup from './WishlistPopup';
 
 const Navbar = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -43,10 +44,18 @@ const Navbar = () => {
               <CartPopup/>
             </PopoverContent>
           </Popover>
-          <div className="wishlist relative cursor-pointer">
-            <span className='absolute -top-1 -right-2 border border-accentBlue h-5 w-5 rounded-full text-xs bg-white text-accentBlue flex justify-center items-center'>2</span>
-            <span><Icons.wishlist/></span>
-          </div>
+          <Popover>
+            <PopoverTrigger asChild>
+              <div className="wishlist relative cursor-pointer">
+                <span className='absolute -top-1 -right-2 border border-accentBlue h-5 w-5 rounded-full text-xs bg-white text-accentBlue flex justify-center items-center'>2</span>
+                <span><Icons.wishlist/></span>
+              </div>
+            </PopoverTrigger>
+            <PopoverContent className='w-104' side='bottom' align='end'>
+              <WishlistPopup/>
+            </PopoverContent>
+          </Popover>
+          
           {/* ============ user popup ============= */}
           <Popover>
             <PopoverTrigger asChild>
