@@ -291,6 +291,15 @@
   line-height: 11px;
 }
 
+
+.custom-radio-item[data-state='checked'] {
+  @apply border-accentOrange;
+}
+
+.custom-radio-item[data-state='checked'] + div {
+  @apply bg-accentOrange;
+}
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
