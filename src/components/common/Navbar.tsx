@@ -41,7 +41,7 @@ const Navbar = () => {
               </div>
             </PopoverTrigger>
             <PopoverContent className='w-104' side='bottom' align='end'>
-              <CartPopup/>
+              {/* <CartPopup/> */}
             </PopoverContent>
           </Popover>
           <Popover>
@@ -52,7 +52,7 @@ const Navbar = () => {
               </div>
             </PopoverTrigger>
             <PopoverContent className='w-104' side='bottom' align='end'>
-              <WishlistPopup/>
+              {/* <WishlistPopup/> */}
             </PopoverContent>
           </Popover>
           
