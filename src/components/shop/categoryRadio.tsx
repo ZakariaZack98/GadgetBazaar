@@ -11,7 +11,7 @@ interface CategoryRadioPropsType {
 const CategoryRadio = ({ categoryList, onSelectCategory }: CategoryRadioPropsType) => {
   return (
     <div className='border-b pb-10 border-gray-300'>
-      <h3 className="label2 mb-4 ">CATEGORY</h3>
+      <h3 className="label2 mb-4 text-lightBlack">CATEGORY</h3>
       <RadioGroup
         onValueChange={(value: string) => {
           const selectedCategory = categoryList.find(category => category.name === value);
@@ -36,7 +36,7 @@ const CategoryRadio = ({ categoryList, onSelectCategory }: CategoryRadioPropsTyp
                 </div>
               </RadioGroupItem>
             </div>
-            <Label htmlFor={category.name}>{category.name}</Label>
+            <Label htmlFor={category.name} className='text-lightBlack'>{category.name}</Label>
           </div>
         ))}
       </RadioGroup>

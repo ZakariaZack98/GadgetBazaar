@@ -3,6 +3,7 @@ import { getPopularProducts } from "@/api/allProducts";
 import PopularTags from "@/components/common/PopularTags";
 import ProductCard from "@/components/common/ProductCard";
 import FeaturedProductLoadingSkeleton from "@/components/home/skeletons/featuredProductsSkeleton";
+import BrandFilter from "@/components/shop/BrandFilter";
 import CategoryRadio from "@/components/shop/categoryRadio";
 import FilterList from "@/components/shop/FilterList";
 import PriceRange from "@/components/shop/PriceRange";
@@ -12,6 +13,8 @@ import { sortFactors } from "@/lib/sortFactors";
 import { CategoryType } from "@/types/category";
 import { ProductType } from "@/types/product";
 import { useQuery } from "@tanstack/react-query";
+import Image from "next/image";
+import Link from "next/link";
 import React, { useEffect, useState } from "react";
 
 type SortType = {
@@ -37,6 +40,8 @@ const Shop = () => {
   });
   const [filters, setFilters] = useState<string[]>([]);
   const [productsData, setProductsData] = useState<ProductType[]>([]);
+  const [brands, setBrands] = useState<string[]>([]);
+  const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
 
   //* data fetching layer ============================================================================
   //TODO: Fetch (mock) category data
@@ -57,6 +62,8 @@ const Shop = () => {
       const maxPrice = Math.max(
         ...data.products.map((product) => product.price)
       );
+      const brandsList = data.products.map((product) => product.brand);
+      setBrands(brandsList);
       setMinPriceLimit(minPrice);
       setMaxPriceLimit(maxPrice);
       setPriceRange([minPrice, maxPrice]);
@@ -70,7 +77,7 @@ const Shop = () => {
       <div className="grid grid-cols-12 gap-5">
         {/* ============================================= sidebar ==============================================*/}
         <div className="col-span-3">
-          <div className="flex flex-col gap-10">
+          <div className="flex flex-col gap-10 ">
             <CategoryRadio
               categoryList={categoryList}
               onSelectCategory={setSelectedCategory}
@@ -81,7 +88,21 @@ const Shop = () => {
               minPriceLimit={minPriceLimit}
               maxPriceLimit={maxPriceLimit}
             />
+            <BrandFilter
+              allBrands={brands}
+              selectedBrands={selectedBrands}
+              onSelectBrand={setSelectedBrands}
+            />
             <PopularTags />
+            <div className="flex items-stretch h-fit">
+              <Link href={"/shop/smartwatches"} className="relative w-full h-180 flex justify-center object-center object-cover">
+                <Image
+                  src={"/images/banner/sidebar_banner.png"}
+                  alt="sidebar_banner"
+                  fill
+                />
+              </Link>
+            </div>
           </div>
         </div>
         {/* ======================================= product grid part ========================================*/}

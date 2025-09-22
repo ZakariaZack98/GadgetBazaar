@@ -40,7 +40,7 @@ const FeaturedProducts = () => {
         <Link
           href={"/category/computers-laptops"}
           className="w-full relative flex justify-center object-cover object-center">
-          <img src={featuredProductsAssets.banner.imgUrl} alt="banner_image" className="" />
+          <img src={featuredProductsAssets.banner.imgUrl} alt="banner_image" />
         </Link>
         {/* =========================== featured tab section ============================= */}
         <div className="lg:min-w-3/4 flex flex-col justify-between gap-5">
